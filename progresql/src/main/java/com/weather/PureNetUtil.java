@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.Map;
 /**
  * Created by JSKJ on 2019/5/15.
- * 网络访问工具类(封装get和post方法)
+ * 网络访问工具类(封装get和post方法)    https://code.juhe.cn/docs/172
  */
 public class PureNetUtil {
 
