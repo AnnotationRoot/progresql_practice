@@ -7,10 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import utils.BaseMsg;
 
@@ -20,7 +17,7 @@ import java.util.Map;
 /**
  * Created by JSKJ on 2019/5/17.
  */
-@Controller
+@RestController
 @Slf4j
 @RequestMapping("/expres")
 @Api(tags = "/expres",description = "物流查询")
