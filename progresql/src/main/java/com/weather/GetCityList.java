@@ -14,7 +14,7 @@ public class GetCityList {
      * @return 返回接口数据
      */
     public static String excute(){
-        String url="http://v.juhe.cn/weather/citys?key=***a7558b2e0bedaa19673f74a6809ce";//接口URL
+        String url="http://v.juhe.cn/weather/citys?key=6900383c3fc1fc52640330d89133fc58";//接口URL
         //PureNetUtil是一个封装了get和post方法获取网络请求数据的工具类
         return PureNetUtil.get(url);//使用get方法
     }

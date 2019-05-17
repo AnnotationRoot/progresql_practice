@@ -1,14 +1,25 @@
 package com.lazy.controller;
 
+import com.weather.GetCityList;
 import com.weather.PureNetUtil;
 
+import com.weather.WeatherReportByCity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,32 +32,21 @@ public class WeatherTest {
     @RequestMapping(value = "api/weather",method = RequestMethod.GET)
     @ResponseBody
     public String readWeather(){
-        Map requestMap = new HashMap();
-        String cityname = "郑州";
-        String dtype = "json";
-        int format = 1;
-        requestMap.put("cityname",cityname);
-        requestMap.put("dtype",dtype);
-        //   requestMap.put("format",format);
-        String url = "http://v.juhe.cn/weather/index";
-        String key = "6900383c3fc1fc52640330d89133fc58";
-        requestMap.put("key",key);
-        return PureNetUtil.post(url, requestMap);
+       return "aa";
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException {
-        Map requestMap = new HashMap();
-        String name = URLEncoder.encode("郑州","utf-8");
-        String dtype = "json";
-        int format = 1;
-        requestMap.put("cityname",name);
-        requestMap.put("dtype",dtype);
-        //   requestMap.put("format",format);
-        String url = "http://v.juhe.cn/weather/index";
-        String key = "6900383c3fc1fc52640330d89133fc58";
-        requestMap.put("key",key);
-        System.out.println(name);       //%E9%83%91%E5%B7%9E
-        System.out.println(PureNetUtil.post(url, requestMap));
+
+        String name = GetCityList.getIDBycityName("郑州");
+    //    System.out.println("调用获取城市列表接口,返回所有数据==="+GetCityList.excute());
+        System.out.println("");
+
+        System.out.println("调用根据城市名/id查询天气===="+WeatherReportByCity.excute(name));
+        System.out.println("");
+
     }
+
+
+
 
 }
