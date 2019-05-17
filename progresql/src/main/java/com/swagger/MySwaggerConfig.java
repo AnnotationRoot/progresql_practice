@@ -20,7 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableWebMvc
 @EnableSwagger2
 public class MySwaggerConfig {
-    @Bean
+/*    @Bean
     public Docket myDocket() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2);
         ApiInfo apiInfo = new ApiInfoBuilder()
@@ -30,9 +30,9 @@ public class MySwaggerConfig {
                 .version("1.0") // 版本号
                 .build();
         docket.apiInfo(apiInfo);
-        //设置只生成被Api这个注解注解过的Ctrl类中有ApiOperation注解的api接口的文档
+        //设置只生成被Api这个注解注解过的Ctrl类中有ApiOperation注解的api接口的文档   withClassAnnotation(Api.class)
         docket.select().apis(RequestHandlerSelectors.withClassAnnotation(Api.class)).apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)).build();
         return docket;
-    }
+    }*/
 
 }
