@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="progresql:war">
+    <output-path>$PROJECT_DIR$/progresql/target</output-path>
+    <root id="archive" name="progresql.war">
+      <element id="artifact" artifact-name="progresql:war exploded" />
+    </root>
+  </artifact>
+</component>
