@@ -32,7 +32,9 @@ public class WeatherTest {
     @RequestMapping(value = "api/weather",method = RequestMethod.GET)
     @ResponseBody
     public String readWeather(){
-       return "aa";
+        String name = GetCityList.getIDBycityName("郑州");
+        String excute = WeatherReportByCity.excute(name);
+        return excute;
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException {
