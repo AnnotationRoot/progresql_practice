@@ -4,9 +4,14 @@ package com.lambda;
 
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by JSKJ on 2019/6/17.
@@ -39,5 +44,24 @@ public class TestLambda {
      *
      * Consumer<T> 消费型接口
      */
+
+    @Test
+    public void test2(){
+        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
+        SimpleDateFormat df =
+                new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+
+        executorService.scheduleAtFixedRate(new Runnable(){
+
+            @Override
+            public void run() {
+                System.out.println("++++++++++++++++++++thread:" + df.format(new Date()));
+            }
+
+        }, 2, 3, TimeUnit.SECONDS);
+        System.out.println("++++++++++++++++++++main:" + df.format(new Date()));
+
+    }
+
 
 }
